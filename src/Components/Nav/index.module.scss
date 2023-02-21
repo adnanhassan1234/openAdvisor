@@ -1,0 +1,183 @@
+@import "src/Style/include-media";
+
+
+
+#nav{
+  position: relative;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 150px);
+
+  @include media ("<tablet"){
+    width: calc(100% - 80px);
+  }
+
+
+
+  &.dashboardNav{
+    margin: -20px 0;
+
+    ul{
+
+
+      li{
+        margin: 0 1px;
+
+        @include media ("<desktop"){
+          margin: 1px 0;
+        }
+
+        > a{
+          padding:15px;
+
+          &:hover{
+            background: #FFDB43;
+            color: #000;
+
+            i{
+              filter: grayscale(1) contrast(100) brightness(0);
+              mix-blend-mode: multiply;
+              opacity: 1;
+
+            }
+          }
+
+          i{
+            margin: 0 7px 0 0;
+            opacity: 0.35;
+
+            @include media ("<desktop"){
+              filter: grayscale(1) contrast(100) brightness(0);
+              mix-blend-mode: multiply;
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+
+    }
+  }
+
+  > ul{
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    font-size: 14px;
+
+
+    @include media ("<widescreen"){
+      padding: 0 10px;
+    }
+
+    @include media ("<desktop"){
+      position: fixed;
+      top: 0;
+      left: -280px;
+      width: 265px;
+      display: block;
+      background: #fff;
+      padding: 20px 0;
+      height: 100vh;
+      z-index: 999999;
+    }
+
+    li{
+      position: relative;
+      margin: 0 15px;
+
+      @include media ("<widescreen"){
+        margin: 0 10px;
+      }
+
+      @include media ("<desktop"){
+        margin: 0;
+      }
+
+      > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        padding: 0;
+        color: rgba(255,255,255,0.35);
+
+        @include media ("<desktop"){
+          padding: 10px 25px;
+          color: #000;
+          justify-content: flex-start;
+        }
+
+        &:hover{
+          color: #fff;
+
+          @include media ("<desktop"){
+            background: #FFDB43;
+            color: #3D3E3F;
+          }
+        }
+      }
+    }
+
+
+  }
+}
+
+.btnList{
+  position: relative;
+  display: flex;
+
+  @include media ("<desktop"){
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+
+  &.actionBtn{
+    display: flex;
+
+    > a[class*='btnNoti'],
+    button{
+      padding: 8px;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      position: relative;
+
+
+      &:hover{
+        color: #fff;
+        background: #FFDB43;
+      }
+
+      &:focus{
+        box-shadow: none;
+      }
+
+      &:after{
+        display: none;
+      }
+    }
+  }
+
+  .counter{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FF754C;
+    color: #fff;
+    font-size: 12px;
+
+  }
+}

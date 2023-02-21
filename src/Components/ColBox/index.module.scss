@@ -1,0 +1,33 @@
+.col{
+  padding: 10px;
+  position: relative;
+
+  .imgBox{
+    position: relative;
+    margin: 0;
+
+    img{
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .description{
+    position: relative;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #E8E8E8;
+    border-top: none;
+  }
+
+  .title{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: normal;
+  }
+
+  a{
+    text-decoration: none;
+  }
+}
+

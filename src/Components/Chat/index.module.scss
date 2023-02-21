@@ -1,0 +1,209 @@
+.chatPopup{
+  position: relative;
+  bottom: 0;
+  background: #fff;
+  margin: 15px 0;
+
+  .chatHeader{
+    position: relative;
+    padding: 10px 60px;
+
+    .imgBox{
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: block;
+      overflow: hidden;
+
+      img{
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    h5{
+      font-family: "Poppins", sans-serif;
+      font-size: 16px;
+    }
+
+    .status{
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: block;
+      background: #00CC52;
+      margin: 3px;
+    }
+
+    .dropdown{
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 15px;
+    }
+  }
+}
+
+.mesgs {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+
+  .msgHistory {
+    overflow: hidden;
+    overflow-y: hidden;
+    height: calc(480px);
+    overflow-y: scroll;
+    margin: 0 0 10px;
+    scrollbar-color: #FFDB43 #fff;
+    scrollbar-width: thin;
+  }
+
+  .outgoing,
+  .incoming {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .userImg {
+      width: 30px;
+      height: 30px;
+      overflow: hidden;
+      border-radius: 50%;
+      position: absolute;
+      top: 10px;
+
+      img{
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .description {
+      position: relative;
+      overflow: hidden;
+      max-width: 85%;
+
+      .time {
+        display: block;
+        font-size: 10px;
+        color: #aaa;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+
+    .text {
+      padding: 12px;
+      background: #F1F3F6;
+      border-radius: 10px;
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 0 5px;
+      color: #000;
+      position: relative;
+      font-size: 13px;
+    }
+  }
+
+  .incoming {
+    padding: 10px 10px 10px 40px;
+
+    .userImg {
+      left: 0;
+    }
+
+    .text {
+
+      .time {
+        right: 6px;
+        text-align: right;
+      }
+    }
+  }
+
+  .outgoing {
+    padding: 10px;
+    align-items: flex-end;
+
+    .userImg {
+      right: 0;
+    }
+
+    .text {
+      background: #FFDB43;
+      color: #000;
+
+      .time {
+        right: 6px;
+        text-align: right;
+        color: #000;
+      }
+    }
+  }
+
+  .typeMsg {
+    position: relative;
+
+    .userImg {
+      width: 30px;
+      height: 30px;
+      overflow: hidden;
+      border-radius: 50%;
+      position: absolute;
+      margin: 10px;
+      top: 0;
+      left: 0;
+
+      img{
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .btnGroup {
+      right: 10px;
+      position: absolute;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .formControl {
+      padding: 0 70px 0 50px;
+      height: 50px;
+      border-radius: 10px;
+      box-sizing: border-box;
+      width: 100%;
+      border: 1px solid rgba(143, 146, 161, 0.05);
+      background: rgba(143, 146, 161, 0.05);
+
+      &:focus{
+        box-shadow: none;
+        outline: none;
+      }
+    }
+
+    .btn {
+      width: 25px;
+      height: 50px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      border: none;
+      line-height: 40px;
+      background: none;
+      color: #8F92A1;
+    }
+  }
+}

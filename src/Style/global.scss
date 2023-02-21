@@ -1,0 +1,427 @@
+@import "~bootstrap/scss/bootstrap";
+@import "Style/base";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Shadows+Into+Light&display=swap");
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #fff;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: $Source;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+.container {
+  max-width: 1170px !important;
+  position: relative;
+}
+
+.quickLinks,
+.nav {
+  font-family: $Poppins;
+  a{
+    &.active{
+      color: #fff !important;
+    }
+  }
+}
+
+nav{
+  @include media ("<desktop"){
+    a{
+      &.active{
+        background: #FFDB43;
+        color: #3D3E3F !important;
+      }
+    }
+  }
+}
+
+header{
+  &.navActive{
+    button[class*='navOpener']{
+      color: #FFDB43;
+      i{
+        &:before{
+          content: "\f00d";
+          font-family: "Font Awesome 5 Pro";
+        }
+      }
+    }
+    nav{
+      > ul{
+        left: 0 !important;
+      }
+    }
+  }
+}
+
+section {
+  padding: 100px 0;
+  overflow: hidden;
+
+  @include media ("<tablet"){
+    padding: 30px 0;
+  }
+}
+
+.contactCto{
+  padding: 50px 0;
+  background: #826A17;
+  color: #fff;
+}
+
+.slick-slider{
+  position: relative;
+
+  .col{
+    padding: 10px;
+
+    .box{
+      position: relative;
+    }
+  }
+}
+
+.colList{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+
+  @include media ("<xs-phone"){
+    display: block;
+  }
+
+  .col{
+    flex: 0 0 33.3%;
+
+    @include media ("<tablet-x"){
+      padding: 5px;
+      flex: 0 0 50%;
+    }
+
+
+  }
+}
+
+
+.card{
+  position: relative;
+  border: none;
+
+  &.border-light{
+    border-color: rgba(0,0,0,0.05) !important;
+  }
+
+  .card-body{
+    position: relative;
+    padding: 20px;
+    background: #fff;
+  }
+}
+
+.dividerText{
+  position: relative;
+  overflow: hidden;
+
+  span{
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    padding: 0 10px 0 0;
+
+    &:after{
+      position: absolute;
+      content: '';
+      height: 1px;
+      background: rgba(0,0,0,0.1);
+      top: 50%;
+      transform: translateY(-50%);
+      left: 100%;
+      display: block;
+      width: 9999px;
+    }
+  }
+}
+
+
+.modal{
+
+  .modal-dialog {
+    &.modal-md{
+      max-width: 700px;
+    }
+  }
+
+  .modal-content{
+    border-radius: 0;
+    background: #FAFBFC;
+  }
+
+  .modal-header{
+    padding: 25px 25px 0;
+  }
+
+  .modal-body{
+    padding: 25px;
+  }
+
+  .btn-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    background-size: 11px;
+  }
+
+  .modal-title{
+    font-family: $poppin;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    margin: 10px 0;
+  }
+}
+
+
+.alert{
+  border: none;
+
+  &.alert-success{
+    background: #EAFFEA;
+    color: #62CC62;
+  }
+}
+
+.arrowList{
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: rgba(0,0,0,0.4);
+
+  li{
+    position: relative;
+    padding: 0 0 0 20px;
+    margin: 0 0 5px;
+
+    &:after{
+      content: "\f105";
+      font-family: "Font Awesome 5 Pro";
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #000;
+    }
+  }
+}
+
+.nav-tabs{
+  position: relative;
+  padding: 15px 0 0;
+
+  .nav-link{
+    position: relative;
+    border: none;
+    padding: 15px;
+    color: rgba(61, 62, 63, 0.56);
+    border-bottom: 4px solid transparent;
+
+    &.active{
+      color: #000;
+      border-color: #FFDB43;
+      font-weight: 700;
+    }
+  }
+}
+
+.accordion{
+  position: relative;
+
+
+  .accordion-item{
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .accordion-button{
+    font-family: $poppin;
+    border: none;
+
+    &.collapsed{
+      &:after{
+        transform: rotate(-90deg);
+      }
+    }
+
+
+    &:focus{
+      box-shadow: none;
+    }
+
+  }
+}
+
+.action-dropdown{
+  .dropdown-toggle{
+    border: none;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8F92A1;
+
+    &:after{
+      display: none;
+    }
+  }
+
+  .dropdown-menu{
+    border: 1px solid #EDEDED;
+    border-radius: 0;
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    font-size: 13px;
+
+    a{
+      padding: 6px 15px;
+      display: block;
+      border-bottom: 1px solid #EDEDED;
+
+      &:last-child{
+        border: none;
+      }
+
+    }
+  }
+
+}
+
+.dataList{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  &.w-100{
+    li{
+      flex: 0 0 100%;
+      padding: 0 0 20px;
+    }
+  }
+
+  li{
+    flex: 0 0 50%;
+    padding: 0 0 20px;
+  }
+
+  .fileImg{
+    width: 60px;
+    height: 60px;
+
+    img{
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.downLoadFileList{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  li{
+    flex: 0 0 33%;
+    padding: 5px;
+
+    a{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 80px;
+      height: 80px;
+      border: 1px dashed #D8D8D8;
+      border-radius: 4px;
+
+      img{
+        display: block;
+        max-width: 60px;
+        max-height: 50px;
+      }
+    }
+  }
+}
+
+.tagList{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  li{
+    margin: 2px;
+
+    a{
+      display: block;
+      padding: 2px 10px;
+      font-size: 12px;
+      line-height: 16px;
+      background: #D9D9D9;
+      color: #000;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  }
+}
+
+.notification{
+
+  &.show{
+    > button{
+      color: #fff;
+      background: #FFDB43;
+    }
+
+    z-index: 2;
+    &:after{
+      position: fixed;
+      content: '';
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0,0,0,0.5);
+      width: 9999px;
+      height: 9999px;
+      transform: translateX(-50%) translateY(-50%);
+      z-index: -2;
+    }
+  }
+}
+
+.contactSidebar{
+  &.openChatPopup{
+    .chatPop{
+      display: block;
+    }
+  }
+}
+

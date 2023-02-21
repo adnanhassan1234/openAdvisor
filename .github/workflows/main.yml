@@ -1,0 +1,29 @@
+name: ReactJs
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  react-build:
+
+    runs-on: [self-hosted]
+
+    steps:
+ 
+    - uses: actions/checkout@v3
+    
+    - name: Removing old build
+      run : cd /var/www/open-advisor/_work/OpenAdvisor/OpenAdvisor/ && sudo su && rm -rf build
+      
+    - name: Installing Packages
+      run: cd /var/www/open-advisor/_work/OpenAdvisor/OpenAdvisor/ && sudo su && npm install --force
+      
+    - name: Creating Build
+      run: cd /var/www/open-advisor/_work/OpenAdvisor/OpenAdvisor/ && sudo su && npm run --silent build
+      env:
+       CI: false
+    - name: Copy .htaccess
+      run: sudo cp /var/www/.htaccess /var/www/open-advisor/_work/OpenAdvisor/OpenAdvisor/build
